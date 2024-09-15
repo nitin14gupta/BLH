@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --c-white: #fffdfa;
+  --c-blue: #00001a;
+  --c-gray: #5e607a;
+  --c-red: #f15d51;
+  --c-silver: #c5c6ce;
+  --c-yellow: #e9aa52;
+  --c-body-background: #faf4f4; /* A light beige color */
+  --f-xl: clamp(2.5rem, 2.1478873239rem + 1.5023474178vw, 3.5rem);
+  --f-l: clamp(2rem, 1.823943662rem + 0.7511737089vw, 2.5rem);
+  --f-m: 2rem;
+  --f-s: 1.25rem;
+  --f-xs: 1.125rem;
+  --f-body: 0.9375rem;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", 'sans-serif';
+  min-height: 100vh;
+  line-height: 1.7;
+  width: min(69.375rem, calc(100% - 1.5rem));
+ background: var(--c-body-background);
+  margin-inline: auto;
+}
+
+h1,h2,h3 {
+  line-height: 1.1;
+}
+
+h1,h2,h3,p {
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+}
+
+li {
+  list-style-type: none;
+}
+
+.wrapper {
+  margin-top: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  color: var(--secondary-text-color);
+  line-height: 1.8rem;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.15s ease-in-out;
+  transition-property: color, background-color;
+}
+
+ul {
+  list-style: none;
+}
+
+/* utility classes */
+
+.small-bold-text {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hover-link {
+  color: var(--secondary-text-color);
+  transition: 0.2s ease-out;
+}
+
+.hover-link:hover {
+  color: var(--hover-color);
+}
+
+.primary-button {
+  background-color: var(--button-color);
+  border-radius: 6px;
+  font-weight: 700;
+  color: white !important;
+  padding: 12px 24px;
+  box-shadow: 0 0 2px var(--secondary-text-color);
+  transition: 0.2s ease-out;
+  text-align: center;
+}
+
+.primary-button:hover {
+  background-color: var(--hover-color);
+}
+
+.secondary-button {
+  border: 0.5px solid var(--secondary-text-color);
+  border-radius: 6px;
+  font-weight: 700;
+  border-color: var(--secondary-text-color);
+  color: var(--primary-text-color);
+  padding: 12px 24px;
+  transition: 0.2s ease-out;
+}
+
+.secondary-button:hover {
+  border-color: var(--hover-color);
+  color: var(--hover-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+/* Sub Nav */
+.menu-bar {
+  background-color: var(--c-blue);
+  color: var(--c-white);
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.menu-bar ul {
+  list-style: none;
+  display: flex;
+  font-size: 0.6rem;
+  padding: 0;
+}
+.menu-bar ul li {
+  padding: 10px;
+  position: relative;
+}
+.menu-bar ul li a {
+  font-size: 0.62rem;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+.menu-bar ul li a:hover {
+  background-color: var(--c-gray);
+  color: var(--c-yellow);
+}
+
+.menu-bar ul li a i{
+  margin-left: 0.4rem;
+}
+.fas {
+  float: right;
+  margin-left: 10px;
+  padding-top: 3px;
+}
+
+
+
+/* Dropdown menu */
+.menu-bar ul li ul.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--c-blue);
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.menu-bar ul li ul.dropdown li {
+  width: 100px;
+}
+
+.menu-bar ul li ul.dropdown li a {
+  padding: 5px 16px;
+  font-size: 0.6rem;
+  color: var(--c-white);
+  text-decoration: none;
+  display: block;
+}
+
+.menu-bar ul li ul.dropdown li a:hover {
+  background-color: var(--c-gray);
+  color: var(--c-yellow);
+}
+
+.menu-bar ul li:hover ul.dropdown {
+  display: block;
+}
+
+
+/* Dropdown menu */
+.menu-bar ul li a {
+  font-size: 0.62rem;
+  color: var(--c-white);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.menu-bar ul li a:hover {
+  color: var(--c-yellow);
+}
+
+
+.menu-bar ul li ul.dropdown_SubNews {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: var(--c-blue);
+  padding: 1rem;
+  list-style: none;
+  z-index: 1000;
+}
+
+.menu-bar ul li ul.dropdown_SubNews {
+  left: 100%;
+  top: 0;
+  padding: 1rem;
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.menu-bar ul li:hover > ul.dropdown_SubNews {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+}
+
+.menu-bar ul li ul li {
+  padding: 5px 10px;
+}
+
+.menu-bar ul li ul a {
+  color: var(--c-white);
+  font-size: 0.6rem;
+}
+
+.menu-bar ul li ul a:hover {
+  color: var(--c-yellow);
+}
+
+
+
+/* Dropdown menu for High Court*/
+.menu-bar ul li ul.dropdown_HighCourt {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px); /* Position below the sub-navigation menu */
+  left: 0;
+  background: var(--c-blue);
+  color: var(--c-white);
+  border: 1px solid #ccc;
+  width: 40rem; /* Adjust width as necessary */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.menu-bar ul li:hover > ul.dropdown_HighCourt {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 15px;
+}
+.dropdown_HighCourt li a{
+  font-size: 0.3rem;
+  font-weight: 400;
+}
+.menu-bar ul li ul a:hover {
+  color: var(--c-yellow);
+  top: 2%;
+}
+
+
+
+
+
+

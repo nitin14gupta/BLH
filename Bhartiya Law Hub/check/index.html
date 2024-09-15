@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Banner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --c-white: #ffffff;
+            --c-blue: #007bff;
+            --c-yellow: #ffc107;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #top-banner {
+            position: relative;
+            height: 1.5rem;
+            background-color: var(--c-white);
+            color: var(--c-blue);
+            font-size: 0.8rem;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1rem 0.5rem 1rem;
+        }
+        #top-banner img {
+            height: 1rem;
+            margin-right: 1rem;
+            padding-top: 0.5rem;
+        }
+        #weather-info {
+            position: relative;
+            width: 40rem;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        #weather-info span {
+            display: inline-block;
+        }
+        #social-icons {
+            width: 20rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #social-icons i {
+            font-size: small;
+            margin-right: 10px;
+            color: var(--c-yellow);
+            background-color: var(--c-blue);
+            transition: transform 0.3s;
+            transform-style: preserve-3d;
+            display: inline-block;
+            padding: 3px 5px;
+            border-radius: 20%;
+        }
+        #social-icons:hover {
+            cursor: pointer;
+        }
+        #social-icons i:hover {
+            transform: rotateX(360deg);
+            color: var(--c-white);
+        }
+    </style>
+</head>
+<body>
+    <div id="top-banner">
+        <div id="weather-info">
+            <span>Weather info goes here</span>
+        </div>
+        <div id="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/nitin_14gupta" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var style = document.createElement('style');
+            var weatherInfo = document.querySelector('#weather-info');
+            var weatherSpan = weatherInfo.querySelector('span');
+            var weatherInfoWidth = weatherInfo.offsetWidth;
+            var spanWidth = weatherSpan.offsetWidth;
+
+            style.innerHTML = `
+                @keyframes scroll {
+                    0% { transform: translateX(${weatherInfoWidth}px); }
+                    100% { transform: translateX(-${spanWidth}px); }
+                }
+            `;
+            document.head.append(style);
+
+            weatherSpan.style.animation = 'scroll 20s linear infinite';
+        }
+    </script>
+</body>
+</html>

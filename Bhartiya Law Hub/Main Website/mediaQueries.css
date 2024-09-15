@@ -1,0 +1,57 @@
+/* HAmburger menu */
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-links ul li {
+        margin: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    #weather-info {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        animation: scroll initial infinite;
+    }
+
+    #weather-info span {
+        flex-shrink: 0;
+        padding: 0 1rem;
+    }
+}
+
+
+/* sub nav responsive */
+
+/* Banner sliding horizontally at 768px */
+@media (max-width: 768px) {
+  .menu-bar {
+    overflow-x: auto;
+    white-space: nowrap;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menu-bar ul {
+    display: flex;
+    width: max-content; /* Ensures the width fits the content */
+  }
+
+  .menu-bar ul li {
+    display: inline-block; /* Keeps the items in a line */
+  }
+}
